@@ -1,0 +1,27 @@
+<%- include header %>
+        <div class="container">
+            <div class="row">
+                <% arts.forEach(function(art) { %>
+                    <div class="col-xs-8 col-xs-offset-2 group-center">
+                        <div class="article-box">
+                        <!-- 笔记标题 -->
+                            <a href="/detail/<%= art._id %>">
+                                <h3 class="text-center"><%= art.title %></h3>
+                            </a>
+
+                            <p class="text-center">
+                            <!-- 笔记标签 -->
+                                <span class="label label-info"><%= art.tag %></span> |
+                                <!-- 笔记创建时间 -->
+                                <span class="create-time">
+                                    <span class="text-bold">时间：</span>
+                                    <%= art.createTime %>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </body>
+</html>
